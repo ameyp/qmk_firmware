@@ -10,6 +10,9 @@
 #ifdef KEYBOARD_kinesis_kint36
 #    include "kint36.h"
 #endif
+#ifdef KEYBOARD_kinesis_kint2pp
+	#include "kint2pp.h"
+#endif
 
 #include "quantum.h"
 

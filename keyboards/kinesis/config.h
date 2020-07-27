@@ -139,5 +139,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifdef SUBPROJECT_kint36
 #    include "kint36/config.h"
 #endif
+#ifdef SUBPROJECT_kint2pp
+    #include "kint2pp/config.h"
+#endif
 
 #endif
