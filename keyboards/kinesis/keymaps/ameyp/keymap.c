@@ -93,17 +93,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ___,     KC_QUOT, KC_COMM, KC_DOT,            KC_P,                KC_Y,                    KC_F,     KC_G,             KC_C,              KC_R, KC_L, ___,
 KC_CAPS, KC_A,    KC_O,    KC_E,              KC_U,                KC_I,                    KC_D,     KC_H,             KC_T,              KC_N, KC_S, ___,
 ___,     KC_SCLN, KC_Q,    KC_J,              KC_K,                KC_X,                    KC_B,     KC_M,             KC_W,              KC_V, KC_Z, ___,
-         ___,     ___,     LT(MOUR, KC_LEFT), LT(NAVR, KC_RIGHT),                                     LT(NSSL, KC_UP),   LT(NSL, KC_DOWN), ___,  ___,
-                                                      KC_LGUI, ___,                                 ___, KC_RGUI,
-                                                               LT(MEDR, KC_TAB),       LT(FUNL, KC_TAB),
-                                       LCTL_T(KC_BSPC), LALT_T(KC_DEL), KC_LSPO,       KC_RSPC, RALT_T(KC_ENT), RCTL_T(KC_SPC)
+         ___,     ___,     MO(MOUR),          KC_LSPO,                                      KC_RSPC,  MO(FUNL),         ___,  ___,
+                                                              KC_LGUI, ___,              ___, KC_RGUI,
+                                                              LT(MEDR, KC_TAB),       LT(NSSL, KC_TAB),
+                                     LCTL_T(KC_BSPC), LALT_T(KC_DEL), MO(NAVR),       MO(NSL), RALT_T(KC_ENT), RCTL_T(KC_SPC)
 ),
 
      [NAVR] = LAYOUT_numless(
-          ___, KC_RST,  ___,     ___,     ___,     ___,        KC_END,  KC_HOME, KC_UP,   KC_PGUP, KC_PGDN, ___,
+          ___, KC_RST,  ___,     ___,     ___,     ___,        KC_ESC,  KC_TAB,  KC_UP,   KC_PGUP, KC_PGDN, ___,
           ___, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, ___,        KC_AGIN, KC_LEFT, KC_DOWN, KC_RGHT, KC_UNDO, ___,
           ___, ___,     KC_ALGR, ___,     ___,     ___,        KC_CUT,  KC_COPY, KC_PSTE, KC_BSPC, KC_DEL,  ___,
-               ___,     ___,     ___,     ___,                          KC_ENT,  KC_SPC,  ___,     ___,
+               ___,     ___,     ___,     ___,                          KC_HOME, KC_END,  ___,     ___,
                                           KC_TRNS, ___,        ___, KC_TRNS,
                                                    ___,        ___,
                                   KC_BSPC, KC_DEL, ___,        ___, KC_ENT, KC_SPC
@@ -133,7 +133,7 @@ ___,     KC_SCLN, KC_Q,    KC_J,              KC_K,                KC_X,        
           ___, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, ___,
           ___, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, ___,
           ___, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, ___,
-               ___,     KC_TRNS, KC_TRNS, KC_TRNS,                      KC_BTN2, KC_TRNS, ___,     ___,
+               ___,     ___,     ___,     ___,                          KC_BTN2, ___,     ___,     ___,
                                           KC_TRNS, ___,        ___, KC_TRNS,
                                                    ___,        ___,
                                          ___, ___, ___,        ___, KC_BTN1, KC_BTN3
@@ -143,7 +143,7 @@ ___,     KC_SCLN, KC_Q,    KC_J,              KC_K,                KC_X,        
           ___, KC_F12, KC_F7,  KC_F8,  KC_F9, KC_PSCR,     ___, ___,     ___,     ___,     KC_RST,  ___,
           ___, KC_F11, KC_F4,  KC_F5,  KC_F6, KC_SLCK,     ___, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, ___,
           ___, KC_F10, KC_F1,  KC_F2,  KC_F3, KC_PAUS,     ___, ___,     ___,     KC_ALGR, ___,     ___,
-               ___,    ___,    ___,    ___,                     KC_TRNS, ___,     ___,     ___,
+               ___,    ___,    ___,    ___,                     ___, ___,     ___,     ___,
                                          KC_TRNS, ___,     ___, KC_TRNS,
                                                   ___,     ___,
                                      KC_APP, ___, ___,     ___, ___, ___
@@ -153,7 +153,7 @@ ___,     KC_SCLN, KC_Q,    KC_J,              KC_K,                KC_X,        
           ___, KC_LBRC, KC_7,   KC_8,  KC_9,    KC_RBRC,     ___, ___,     ___,     ___,     KC_RST,  ___,
           ___, KC_SCLN, KC_4,   KC_5,  KC_6,    KC_EQL,      ___, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, ___,
           ___, KC_GRV,  KC_1,   KC_2,  KC_3,    KC_BSLS,     ___, ___,     ___,     KC_ALGR, ___,     ___,
-               ___,     KC_DOT, KC_0,  KC_MINS,                   KC_TRNS, ___,    ___,     ___,
+               ___,     KC_DOT, KC_0,  KC_MINS,                   ___,     ___,     ___,     ___,
                                            KC_TRNS, ___,     ___, KC_TRNS,
                                                     ___,     ___,
                                    KC_BSPC, KC_DEL, ___,     ___, KC_ENT, KC_SPC
@@ -238,3 +238,5 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
      return true;
 }
+
+#define IS_COMMAND (keyboard_report->mods == (MOD_BIT(KC_LGUI) | MOD_BIT(KC_RGUI)))
