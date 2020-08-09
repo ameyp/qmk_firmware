@@ -93,16 +93,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ___,     KC_QUOT, KC_COMM, KC_DOT,            KC_P,                KC_Y,                    KC_F,     KC_G,             KC_C,              KC_R, KC_L, ___,
 KC_CAPS, KC_A,    KC_O,    KC_E,              KC_U,                KC_I,                    KC_D,     KC_H,             KC_T,              KC_N, KC_S, ___,
 ___,     KC_SCLN, KC_Q,    KC_J,              KC_K,                KC_X,                    KC_B,     KC_M,             KC_W,              KC_V, KC_Z, ___,
-         ___,     ___,     MO(MOUR),          KC_LSPO,                                      KC_RSPC,  MO(FUNL),         ___,  ___,
-                                                              KC_LGUI, ___,              ___, KC_RGUI,
-                                                              LT(MEDR, KC_TAB),       LT(NSSL, KC_TAB),
-                                     LCTL_T(KC_BSPC), LALT_T(KC_DEL), MO(NAVR),       MO(NSL), RALT_T(KC_ENT), RCTL_T(KC_SPC)
+         ___,     ___,     MO(MOUR),          KC_LGUI,                                      KC_RGUI,  MO(FUNL),         ___,  ___,
+                                                            KC_LCPO,   ___,           ___,   KC_RCPC,
+                                                                     KC_LALT,       KC_RALT,
+                                LT(NAVR, KC_BSPC), LT(MEDR, KC_DEL), KC_LSFT,       KC_RSFT, LT(NSSL, KC_ENT), LT(NSL, KC_SPC)
 ),
 
      [NAVR] = LAYOUT_numless(
-          ___, KC_RST,  ___,     ___,     ___,     ___,        KC_ESC,  KC_TAB,  KC_UP,   KC_PGUP, KC_PGDN, ___,
-          ___, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, ___,        KC_AGIN, KC_LEFT, KC_DOWN, KC_RGHT, KC_UNDO, ___,
-          ___, ___,     KC_ALGR, ___,     ___,     ___,        KC_CUT,  KC_COPY, KC_PSTE, KC_BSPC, KC_DEL,  ___,
+          ___, KC_RST,  ___,     ___,     ___,     ___,        KC_ESC,  KC_TAB,  KC_PGUP, KC_PGDN, KC_AGIN, ___,
+          ___, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, ___,        KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_COPY, ___,
+          ___, ___,     KC_ALGR, ___,     ___,     ___,        KC_CUT,  KC_BSPC, KC_DEL,  KC_PSTE, KC_UNDO,  ___,
                ___,     ___,     ___,     ___,                          KC_HOME, KC_END,  ___,     ___,
                                           KC_TRNS, ___,        ___, KC_TRNS,
                                                    ___,        ___,
@@ -150,20 +150,20 @@ ___,     KC_SCLN, KC_Q,    KC_J,              KC_K,                KC_X,        
           ),
 
      [NSL] = LAYOUT_numless(
-          ___, KC_LBRC, KC_7,   KC_8,  KC_9,    KC_RBRC,     ___, ___,     ___,     ___,     KC_RST,  ___,
-          ___, KC_SCLN, KC_4,   KC_5,  KC_6,    KC_EQL,      ___, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, ___,
+          ___, KC_DOT,  KC_7,   KC_8,  KC_9,    KC_EQL,     ___, ___,     ___,     ___,     KC_RST,  ___,
+          ___, KC_SCLN, KC_4,   KC_5,  KC_6,    KC_MINS,      ___, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, ___,
           ___, KC_GRV,  KC_1,   KC_2,  KC_3,    KC_BSLS,     ___, ___,     ___,     KC_ALGR, ___,     ___,
-               ___,     KC_DOT, KC_0,  KC_MINS,                   ___,     ___,     ___,     ___,
+               ___,     KC_LBRC, KC_0,  KC_RBRC,                   ___,     ___,     ___,     ___,
                                            KC_TRNS, ___,     ___, KC_TRNS,
                                                     ___,     ___,
                                    KC_BSPC, KC_DEL, ___,     ___, KC_ENT, KC_SPC
           ),
 
      [NSSL] = LAYOUT_numless(
-          ___, KC_LCBR, KC_AMPR, KC_ASTR, KC_UNDS, KC_RCBR,     ___, ___,     ___,     ___,     KC_RST,  ___,
-          ___, KC_COLN, KC_DLR,  KC_PERC, KC_CIRC, KC_PLUS,     ___, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, ___,
-          ___, KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_PIPE,     ___, ___,     ___,     KC_ALGR, ___,     ___,
-               ___,     KC_LPRN, KC_SLSH, KC_UNDS,                   ___,     ___,     ___,     ___,
+          ___, KC_LCBR, KC_AMPR, KC_SLSH, KC_UNDS, KC_PLUS,     ___, ___,     ___,     ___,     KC_RST,  ___,
+          ___, KC_COLN, KC_DLR,  KC_PERC, KC_AT,   KC_UNDS,     ___, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, ___,
+          ___, KC_TILD, KC_EXLM, KC_CIRC, KC_HASH, KC_PIPE,     ___, ___,     ___,     KC_ALGR, ___,     ___,
+               ___,     KC_LCBR, KC_ASTR, KC_RCBR,                   ___,     ___,     ___,     ___,
                                           KC_TRNS, ___,         ___, KC_TRNS,
                                                    ___,         ___,
                                   KC_BSPC, KC_DEL, ___,         ___, KC_ENT, KC_SPC
@@ -239,4 +239,4 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
      return true;
 }
 
-#define IS_COMMAND (keyboard_report->mods == (MOD_BIT(KC_LGUI) | MOD_BIT(KC_RGUI)))
+#define IS_COMMAND (get_mods() == (MOD_BIT(KC_LGUI) | MOD_BIT(KC_RGUI)))
