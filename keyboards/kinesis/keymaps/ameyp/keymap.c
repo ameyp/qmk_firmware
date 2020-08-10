@@ -71,6 +71,10 @@ enum kinesis_layers {
      DVORAK_FULL,
      QWERTY_FULL,
      BASE,
+     // Half-keyboard
+     TARK,
+     TARK2,
+
      // Non-alphas
      MBO,
      MEDR,
@@ -85,13 +89,14 @@ enum kinesis_keycodes {
      KC_DV = SAFE_RANGE,
      KC_DVF,
      KC_QW,
-     KC_BASE
+     KC_BASE,
+     KC_TARK
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      [DVORAK] = LAYOUT_numless(
 ___,     KC_QUOT, KC_COMM, KC_DOT,            KC_P,                KC_Y,                    KC_F,     KC_G,             KC_C,              KC_R, KC_L, ___,
-KC_CAPS, KC_A,    KC_O,    KC_E,              KC_U,                KC_I,                    KC_D,     KC_H,             KC_T,              KC_N, KC_S, ___,
+___,     KC_A,    KC_O,    KC_E,              KC_U,                KC_I,                    KC_D,     KC_H,             KC_T,              KC_N, KC_S, ___,
 ___,     KC_SCLN, KC_Q,    KC_J,              KC_K,                KC_X,                    KC_B,     KC_M,             KC_W,              KC_V, KC_Z, ___,
          ___,     ___,     MO(MOUR),          KC_LGUI,                                      KC_RGUI,  MO(FUNL),         ___,  ___,
                                                             KC_LCPO,   ___,           ___,   KC_RCPC,
@@ -106,14 +111,14 @@ ___,     KC_SCLN, KC_Q,    KC_J,              KC_K,                KC_X,        
                ___,     ___,     ___,     ___,                          KC_HOME, KC_END,  ___,     ___,
                                           KC_TRNS, ___,        ___, KC_TRNS,
                                                    ___,        ___,
-                                  KC_BSPC, KC_DEL, ___,        ___, KC_ENT, KC_SPC
+                             KC_BSPC, KC_DEL, KC_TRNS,        KC_TRNS, KC_ENT, KC_SPC
           ),
 
      [MEDR] = LAYOUT_numless(
           ___, KC_RST,  ___,     ___,     ___,     ___,        KC_TOG, KC_MOD,  KC_HUI,  KC_SAI,  KC_VAI,  ___,
           ___, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, ___,        KC_NU,  KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, ___,
-          ___, ___,     KC_ALGR, ___,     ___,     ___,        KC_DVF, KC_DV,   KC_QW,   ___,     ___,     ___,
-               ___,     ___,     ___,     ___,                         KC_MUTE, ___,     ___,     ___,
+          ___, ___,     KC_ALGR, ___,     ___,     ___,        KC_DVF, KC_DV,   KC_QW,   ___,     KC_CAPS, ___,
+               ___,     ___,     ___,     ___,                         KC_MUTE, ___,     KC_TARK,     ___,
                                           KC_TRNS, ___,        ___, KC_TRNS,
                                                    ___,        ___,
                                          ___, ___, ___,        ___, KC_MSTP, KC_MPLY
@@ -143,17 +148,17 @@ ___,     KC_SCLN, KC_Q,    KC_J,              KC_K,                KC_X,        
           ___, KC_F12, KC_F7,  KC_F8,  KC_F9, KC_PSCR,     ___, ___,     ___,     ___,     KC_RST,  ___,
           ___, KC_F11, KC_F4,  KC_F5,  KC_F6, KC_SLCK,     ___, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, ___,
           ___, KC_F10, KC_F1,  KC_F2,  KC_F3, KC_PAUS,     ___, ___,     ___,     KC_ALGR, ___,     ___,
-               ___,    ___,    ___,    ___,                     ___, ___,     ___,     ___,
+               ___,    ___,    ___,    ___,                     ___,     ___,     ___,     ___,
                                          KC_TRNS, ___,     ___, KC_TRNS,
                                                   ___,     ___,
                                      KC_APP, ___, ___,     ___, ___, ___
           ),
 
      [NSL] = LAYOUT_numless(
-          ___, KC_DOT,  KC_7,   KC_8,  KC_9,    KC_EQL,     ___, ___,     ___,     ___,     KC_RST,  ___,
-          ___, KC_SCLN, KC_4,   KC_5,  KC_6,    KC_MINS,      ___, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, ___,
+          ___, KC_DOT,  KC_7,   KC_8,  KC_9,    KC_EQL,      ___, ___,     ___,     ___,     KC_RST,  ___,
+          ___, KC_SCLN, KC_4,   KC_5,  KC_6,    KC_MINS,     ___, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, ___,
           ___, KC_GRV,  KC_1,   KC_2,  KC_3,    KC_BSLS,     ___, ___,     ___,     KC_ALGR, ___,     ___,
-               ___,     KC_LBRC, KC_0,  KC_RBRC,                   ___,     ___,     ___,     ___,
+               ___,     KC_LBRC, KC_0,  KC_RBRC,                  KC_TRNS, ___,     ___,     ___,
                                            KC_TRNS, ___,     ___, KC_TRNS,
                                                     ___,     ___,
                                    KC_BSPC, KC_DEL, ___,     ___, KC_ENT, KC_SPC
@@ -163,10 +168,30 @@ ___,     KC_SCLN, KC_Q,    KC_J,              KC_K,                KC_X,        
           ___, KC_LCBR, KC_AMPR, KC_SLSH, KC_UNDS, KC_PLUS,     ___, ___,     ___,     ___,     KC_RST,  ___,
           ___, KC_COLN, KC_DLR,  KC_PERC, KC_AT,   KC_UNDS,     ___, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, ___,
           ___, KC_TILD, KC_EXLM, KC_CIRC, KC_HASH, KC_PIPE,     ___, ___,     ___,     KC_ALGR, ___,     ___,
-               ___,     KC_LCBR, KC_ASTR, KC_RCBR,                   ___,     ___,     ___,     ___,
+               ___,     KC_LCBR, KC_ASTR, KC_RCBR,                   KC_TRNS, ___,     ___,     ___,
                                           KC_TRNS, ___,         ___, KC_TRNS,
                                                    ___,         ___,
                                   KC_BSPC, KC_DEL, ___,         ___, KC_ENT, KC_SPC
+          ),
+
+     [TARK] = LAYOUT_numless(
+          ___, KC_G,    KC_Q,     KC_W,    KC_E,      KC_4,                   ___, ___,     ___,     ___,     KC_RST,  ___,
+          ___, KC_LSFT, KC_A,     KC_S,    KC_D,      KC_F,                   ___, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, ___,
+          ___, KC_B,    KC_Z,     KC_X,    KC_C,      KC_T,                   ___, ___,     ___,     KC_ALGR, ___,     ___,
+               ___,     KC_1,     KC_2,    KC_3,                                KC_TRNS, ___,     ___,     ___,
+                                                MO(TARK2),   ___,         ___, KC_TRNS,
+                                                   LT(MEDR,KC_DEL),      ___,
+                                          KC_LCTL, KC_LALT, KC_TAB,      ___, KC_ENT, KC_SPC
+          ),
+
+     [TARK2] = LAYOUT_numless(
+          ___, KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS,   KC_SPC,                   ___, ___,     ___,     ___,     KC_RST,  ___,
+      KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS,   KC_5,                     ___, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, ___,
+          ___, KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS,   KC_6,                     ___, ___,     ___,     KC_ALGR, ___,     ___,
+               ___,     KC_TRNS,  KC_TRNS, KC_TRNS,                                KC_TRNS, ___,     ___,     ___,
+                                                      ___,   ___,         ___, KC_TRNS,
+                                                           KC_TRNS,      ___,
+                                         KC_TRNS, KC_TRNS, KC_TRNS,      ___, KC_ENT, KC_SPC
           ),
 
      // Full Dvorak layout
@@ -174,10 +199,10 @@ ___,     KC_SCLN, KC_Q,    KC_J,              KC_K,                KC_X,        
           KC_ESC, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8,
           KC_EQL, KC_1, KC_2, KC_3, KC_4, KC_5,
           KC_TAB, KC_QUOT, KC_COMM, KC_DOT, KC_P, KC_Y,
-          LT(MEDR, KC_CAPS), KC_A, KC_O, KC_E, KC_U, KC_I,
+          KC_CAPS, KC_A, KC_O, KC_E, KC_U, KC_I,
           KC_LSFT, KC_SCLN, KC_Q, KC_J, KC_K, KC_X,
           KC_GRV, KC_NO, KC_LEFT, KC_RIGHT,
-          KC_LCTL, KC_LALT, KC_HOME, KC_BSPC, KC_DEL, KC_END,
+          KC_LCTL, KC_LALT, KC_HOME, KC_BSPC, LT(MEDR, KC_DEL), KC_END,
 
           KC_F9, KC_F10, KC_F11, KC_F12, KC_PSCR, KC_SLCK, KC_PAUS, KC_NO, KC_NO,
           KC_6, KC_7, KC_8, KC_9, KC_0, KC_BSLS,
@@ -196,7 +221,7 @@ ___,     KC_SCLN, KC_Q,    KC_J,              KC_K,                KC_X,        
           LT(MEDR, KC_CAPS), KC_A, KC_S, KC_D, KC_F, KC_G,
           KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B,
           KC_GRV, KC_INS, KC_LEFT, KC_RIGHT,
-          KC_LCTL, KC_LALT, KC_HOME, KC_BSPC, KC_DEL, KC_END,
+          KC_LCTL, KC_LALT, KC_HOME, KC_BSPC, LT(MEDR, KC_DEL), KC_END,
 
           KC_F9, KC_F10, KC_F11, KC_F12, KC_PSCR, KC_SLCK, KC_PAUS, KC_NO, KC_NO,
           KC_6, KC_7, KC_8, KC_9, KC_0, KC_MINS,
@@ -232,6 +257,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
      case KC_BASE:
      if (record->event.pressed) {
           set_single_persistent_default_layer(BASE);
+     }
+     return false;
+
+     case KC_TARK:
+     if (record->event.pressed) {
+          set_single_persistent_default_layer(TARK);
      }
      return false;
      }
