@@ -167,8 +167,8 @@ ___,     KC_SCLN, KC_Q,    KC_J,              KC_K,                KC_X,        
      [NSSL] = LAYOUT_numless(
           ___, KC_LCBR, KC_AMPR, KC_SLSH, KC_UNDS, KC_PLUS,     ___, ___,     ___,     ___,     KC_RST,  ___,
           ___, KC_COLN, KC_DLR,  KC_PERC, KC_AT,   KC_UNDS,     ___, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, ___,
-          ___, KC_TILD, KC_EXLM, KC_CIRC, KC_HASH, KC_PIPE,     ___, ___,     ___,     KC_ALGR, ___,     ___,
-               ___,     KC_LCBR, KC_ASTR, KC_RCBR,                   KC_TRNS, ___,     ___,     ___,
+          ___, KC_TILD, KC_EXLM, KC_ASTR, KC_HASH, KC_PIPE,     ___, ___,     ___,     KC_ALGR, ___,     ___,
+               ___,     KC_LCBR, KC_CIRC, KC_RCBR,                   KC_TRNS, ___,     ___,     ___,
                                           KC_TRNS, ___,         ___, KC_TRNS,
                                                    ___,         ___,
                                   KC_BSPC, KC_DEL, ___,         ___, KC_ENT, KC_SPC
@@ -180,7 +180,7 @@ ___,     KC_SCLN, KC_Q,    KC_J,              KC_K,                KC_X,        
           ___, KC_B,    KC_Z,     KC_X,    KC_C,      KC_T,                   ___, ___,     ___,     KC_ALGR, ___,     ___,
                ___,     KC_1,     KC_2,    KC_3,                                KC_TRNS, ___,     ___,     ___,
                                                 MO(TARK2),   ___,         ___, KC_TRNS,
-                                                   LT(MEDR,KC_DEL),      ___,
+                                                            KC_DEL,      MO(MEDR),
                                           KC_LCTL, KC_LALT, KC_TAB,      ___, KC_ENT, KC_SPC
           ),
 
