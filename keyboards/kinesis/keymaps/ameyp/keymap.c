@@ -126,8 +126,8 @@ ___,     KC_SCLN, KC_Q,    KC_J,              KC_K,                KC_X,        
 
      [MOUR] = LAYOUT_numless(
           ___, KC_RST,  ___,     ___,     ___,     ___,        KC_NU,   KC_NU,   KC_NU,   KC_NU,   KC_NU,   ___,
-          ___, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, ___,        KC_NU,   KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, ___,
-          ___, ___,     KC_ALGR, ___,     ___,     ___,        KC_NU,   KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, ___,
+          ___, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, ___,        KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, ___,     ___,
+          ___, ___,     KC_ALGR, ___,     ___,     ___,        KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, ___,     ___,
                ___,     ___,     ___,     ___,                          KC_BTN2, ___,     ___,     ___,
                                           KC_TRNS, ___,        ___, KC_TRNS,
                                                    ___,        ___,
