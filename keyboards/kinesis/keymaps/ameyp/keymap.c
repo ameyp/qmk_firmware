@@ -1,5 +1,25 @@
 #include QMK_KEYBOARD_H
 
+/*            HS COLORS            */
+#define HS_WHITE 0, 0
+#define HS_RED 0, 255
+#define HS_CORAL 11, 176
+#define HS_ORANGE 28, 255
+#define HS_GOLDENROD 30, 218
+#define HS_GOLD 36, 255
+#define HS_YELLOW 43, 255
+#define HS_CHARTREUSE 64, 255
+#define HS_GREEN 85, 255
+#define HS_SPRINGGREEN 106, 255
+#define HS_TURQUOISE 123, 90
+#define HS_TEAL 128, 255
+#define HS_CYAN 128, 255
+#define HS_AZURE 132, 102
+#define HS_BLUE 170, 255
+#define HS_PURPLE 191, 255
+#define HS_MAGENTA 213, 255
+#define HS_PINK 234, 128
+
 #define LAYOUT_reduced(\
      M00, K00, K01, K02, K03, K04,                        K05, K06, K07, K08, K09, M09, \
      M10, K10, K11, K12, K13, K14,                        K15, K16, K17, K18, K19, M19, \
@@ -117,8 +137,8 @@ ___,     KC_SCLN, KC_Q,    KC_J,              KC_K,                KC_X,        
      [MEDR] = LAYOUT_numless(
           ___, KC_RST,  ___,     ___,     ___,     ___,        KC_TOG, KC_MOD,  KC_HUI,  KC_SAI,  KC_VAI,  ___,
           ___, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, ___,        KC_NU,  KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, ___,
-          ___, ___,     KC_ALGR, ___,     ___,     ___,        KC_DVF, KC_DV,   KC_QW,   ___,     KC_CAPS, ___,
-               ___,     ___,     ___,     ___,                         KC_MUTE, ___,     KC_TARK,     ___,
+          ___, ___,     KC_ALGR, ___,     ___,     ___,        KC_NU,  KC_DV,   KC_QW,   KC_TARK, KC_CAPS, ___,
+               ___,     ___,     ___,     ___,                         KC_MUTE, ___,     ___,     ___,
                                           KC_TRNS, ___,        ___, KC_TRNS,
                                                    ___,        ___,
                                          ___, ___, ___,        ___, KC_MSTP, KC_MPLY
@@ -128,10 +148,10 @@ ___,     KC_SCLN, KC_Q,    KC_J,              KC_K,                KC_X,        
           ___, KC_RST,  ___,     ___,     ___,     ___,        KC_NU,   KC_NU,   KC_NU,   KC_NU,   KC_NU,   ___,
           ___, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, ___,        KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, ___,     ___,
           ___, ___,     KC_ALGR, ___,     ___,     ___,        KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, ___,     ___,
-               ___,     ___,     ___,     ___,                          KC_BTN2, ___,     ___,     ___,
+               ___,     ___,     ___,     ___,                          KC_BTN3, ___,     ___,     ___,
                                           KC_TRNS, ___,        ___, KC_TRNS,
                                                    ___,        ___,
-                                         ___, ___, ___,        ___, KC_BTN1, KC_BTN3
+                                         ___, ___, ___,        ___, KC_BTN1, KC_BTN2
           ),
 
      [MBO] = LAYOUT_numless(
@@ -178,9 +198,9 @@ ___,     KC_SCLN, KC_Q,    KC_J,              KC_K,                KC_X,        
           ___, KC_G,    KC_Q,     KC_W,    KC_E,      KC_4,                   ___, ___,     ___,     ___,     KC_RST,  ___,
           ___, KC_R,    KC_A,     KC_S,    KC_D,      KC_F,                   ___, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, ___,
           ___, KC_LSFT,    KC_B,  KC_X,    KC_C,      KC_T,                   ___, ___,     ___,     KC_ALGR, ___,     ___,
-               ___,     KC_1,     KC_2,    KC_3,                                KC_TRNS, ___,     ___,     ___,
+               ___,     KC_1,     LT(MEDR, KC_2),    KC_3,                                KC_TRNS, ___,     ___,     ___,
                                                 MO(TARK2),   ___,         ___, KC_TRNS,
-                                                            KC_DEL,      MO(MEDR),
+                                                            KC_DEL,      KC_TRNS,
                                           KC_LCTL, KC_LALT, KC_TAB,      ___, KC_ENT, KC_SPC
           ),
 
@@ -201,8 +221,8 @@ ___,     KC_SCLN, KC_Q,    KC_J,              KC_K,                KC_X,        
           KC_TAB, KC_QUOT, KC_COMM, KC_DOT, KC_P, KC_Y,
           KC_CAPS, KC_A, KC_O, KC_E, KC_U, KC_I,
           KC_LSFT, KC_SCLN, KC_Q, KC_J, KC_K, KC_X,
-          KC_GRV, KC_NO, KC_LEFT, KC_RIGHT,
-          KC_LCTL, KC_LALT, KC_HOME, KC_BSPC, LT(MEDR, KC_DEL), KC_END,
+          KC_GRV, KC_NO, LT(MEDR, KC_LEFT), KC_RIGHT,
+          KC_LCTL, KC_LALT, KC_HOME, KC_BSPC, KC_DEL, KC_END,
 
           KC_F9, KC_F10, KC_F11, KC_F12, KC_PSCR, KC_SLCK, KC_PAUS, KC_NO, KC_NO,
           KC_6, KC_7, KC_8, KC_9, KC_0, KC_BSLS,
@@ -218,10 +238,10 @@ ___,     KC_SCLN, KC_Q,    KC_J,              KC_K,                KC_X,        
           KC_ESC, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8,
           KC_EQL, KC_1, KC_2, KC_3, KC_4, KC_5,
           KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T,
-          LT(MEDR, KC_CAPS), KC_A, KC_S, KC_D, KC_F, KC_G,
+          KC_CAPS, KC_A, KC_S, KC_D, KC_F, KC_G,
           KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B,
-          KC_GRV, KC_INS, KC_LEFT, KC_RIGHT,
-          KC_LCTL, KC_LALT, KC_HOME, KC_BSPC, LT(MEDR, KC_DEL), KC_END,
+          KC_GRV, KC_INS, LT(MEDR, KC_LEFT), KC_RIGHT,
+          KC_LCTL, KC_LALT, KC_HOME, KC_BSPC, KC_DEL, KC_END,
 
           KC_F9, KC_F10, KC_F11, KC_F12, KC_PSCR, KC_SLCK, KC_PAUS, KC_NO, KC_NO,
           KC_6, KC_7, KC_8, KC_9, KC_0, KC_MINS,
@@ -234,6 +254,40 @@ ___,     KC_SCLN, KC_Q,    KC_J,              KC_K,                KC_X,        
 };
 
 
+#ifdef RGBLIGHT_ENABLE
+
+const rgblight_segment_t PROGMEM rgb_default[] = RGBLIGHT_LAYER_SEGMENTS({2, 1, HS_AZURE, 0x10});
+const rgblight_segment_t PROGMEM rgb_qwerty[] = RGBLIGHT_LAYER_SEGMENTS({2, 1, HS_RED, 0x10});
+const rgblight_segment_t PROGMEM rgb_tarkov[] = RGBLIGHT_LAYER_SEGMENTS({2, 1, HS_GOLD, 0x10});
+
+const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
+    rgb_default,
+    rgb_qwerty,
+    rgb_tarkov
+);
+
+void keyboard_pre_init_user(void) {
+    rgblight_disable();
+}
+
+void keyboard_post_init_user(void) {
+    rgblight_enable_noeeprom(); // Enables RGB, without saving settings
+    rgblight_sethsv_noeeprom(HS_CYAN, 0x0);
+    rgblight_mode_noeeprom(RGBLIGHT_MODE_STATIC_LIGHT);
+
+    // Enable LED layers
+    rgblight_layers = my_rgb_layers;
+    rgblight_set_layer_state(0, true);
+}
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+    rgblight_set_layer_state(0, layer_state_cmp(state|default_layer_state, DVORAK));
+    rgblight_set_layer_state(1, layer_state_cmp(state|default_layer_state, QWERTY_FULL));
+    rgblight_set_layer_state(2, layer_state_cmp(state|default_layer_state, TARK));
+    return state;
+}
+#endif
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
      switch (keycode) {
      case KC_DV:
@@ -243,9 +297,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
      return false;
 
      case KC_DVF:
+     /* Don't need this for now.
      if (record->event.pressed) {
           set_single_persistent_default_layer(DVORAK_FULL);
      }
+     */
      return false;
 
      case KC_QW:
@@ -255,9 +311,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
      return false;
 
      case KC_BASE:
+     /* Don't need this for now.
      if (record->event.pressed) {
           set_single_persistent_default_layer(BASE);
      }
+     */
      return false;
 
      case KC_TARK:
