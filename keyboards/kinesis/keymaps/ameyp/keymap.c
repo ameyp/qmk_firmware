@@ -256,9 +256,9 @@ ___,     KC_SCLN, KC_Q,    KC_J,              KC_K,                KC_X,        
 
 #ifdef RGBLIGHT_ENABLE
 
-const rgblight_segment_t PROGMEM rgb_default[] = RGBLIGHT_LAYER_SEGMENTS({2, 1, HS_AZURE, 0x10});
-const rgblight_segment_t PROGMEM rgb_qwerty[] = RGBLIGHT_LAYER_SEGMENTS({2, 1, HS_RED, 0x10});
-const rgblight_segment_t PROGMEM rgb_tarkov[] = RGBLIGHT_LAYER_SEGMENTS({2, 1, HS_GOLD, 0x10});
+const rgblight_segment_t PROGMEM rgb_default[] = RGBLIGHT_LAYER_SEGMENTS({0, 1, HS_AZURE, 0x40});
+const rgblight_segment_t PROGMEM rgb_qwerty[] = RGBLIGHT_LAYER_SEGMENTS({0, 1, HS_RED, 0x40});
+const rgblight_segment_t PROGMEM rgb_tarkov[] = RGBLIGHT_LAYER_SEGMENTS({0, 1, HS_GOLD, 0x40});
 
 const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
     rgb_default,
