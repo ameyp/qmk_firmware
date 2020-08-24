@@ -20,6 +20,33 @@
 #define HS_MAGENTA 213, 255
 #define HS_PINK 234, 128
 
+enum kinesis_layers {
+     // Alphas
+     DVORAK,
+     DVORAK_FULL,
+     QWERTY_FULL,
+     BASE,
+     // Half-keyboard
+     TARK,
+
+     // Non-alphas
+     MBO,
+     MEDR,
+     NAVR,
+     MOUR,
+     NSSL,
+     NSL,
+     FUNL
+};
+
+enum kinesis_keycodes {
+     KC_DV = SAFE_RANGE,
+     KC_DVF,
+     KC_QW,
+     KC_BASE,
+     KC_TARK
+};
+
 #define LAYOUT_reduced(\
      M00, K00, K01, K02, K03, K04,                        K05, K06, K07, K08, K09, M09, \
      M10, K10, K11, K12, K13, K14,                        K15, K16, K17, K18, K19, M19, \
@@ -84,34 +111,6 @@ LAYOUT_reduced(\
 #define KC_HUI RGB_HUI
 #define KC_SAI RGB_SAI
 #define KC_VAI RGB_VAI
-
-enum kinesis_layers {
-     // Alphas
-     DVORAK,
-     DVORAK_FULL,
-     QWERTY_FULL,
-     BASE,
-     // Half-keyboard
-     TARK,
-     TARK2,
-
-     // Non-alphas
-     MBO,
-     MEDR,
-     NAVR,
-     MOUR,
-     NSSL,
-     NSL,
-     FUNL
-};
-
-enum kinesis_keycodes {
-     KC_DV = SAFE_RANGE,
-     KC_DVF,
-     KC_QW,
-     KC_BASE,
-     KC_TARK
-};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      [DVORAK] = LAYOUT_numless(
@@ -194,24 +193,15 @@ ___,     KC_SCLN, KC_Q,    KC_J,              KC_K,                KC_X,        
                                   KC_BSPC, KC_DEL, ___,         ___, KC_ENT, KC_SPC
           ),
 
-     [TARK] = LAYOUT_numless(
-          ___, KC_G,    KC_Q,     KC_W,    KC_E,      KC_4,                   ___, ___,     ___,     ___,     KC_RST,  ___,
+     [TARK] = LAYOUT_reduced(
+       KC_ESC, KC_1,    KC_2,     KC_3,    KC_4,      KC_5,                   ___, KC_6,    KC_7,    KC_8,    KC_9,    ___,
+       KC_TAB, KC_G,    KC_Q,     KC_W,    KC_E,      KC_4,                   ___, ___,     ___,     ___,     KC_RST,  ___,
           ___, KC_R,    KC_A,     KC_S,    KC_D,      KC_F,                   ___, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, ___,
           ___, KC_LSFT,    KC_B,  KC_X,    KC_C,      KC_T,                   ___, ___,     ___,     KC_ALGR, ___,     ___,
                ___,     KC_1,     LT(MEDR, KC_2),    KC_3,                                KC_TRNS, ___,     ___,     ___,
-                                                MO(TARK2),   ___,         ___, KC_TRNS,
+                                                  KC_LCTL,  KC_O,         ___, KC_TRNS,
                                                             KC_DEL,      KC_TRNS,
-                                          KC_LCTL, KC_LALT, KC_TAB,      ___, KC_ENT, KC_SPC
-          ),
-
-     [TARK2] = LAYOUT_numless(
-          ___, KC_ESC,  KC_TRNS,  KC_TRNS, KC_TRNS,   KC_SPC,                   ___, ___,     ___,     ___,     KC_RST,  ___,
-      KC_TRNS, KC_Z, KC_TRNS,  KC_TRNS, KC_TRNS,   KC_5,                     ___, KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI, ___,
-          ___, KC_O, KC_TRNS,  KC_TRNS, KC_TRNS,   KC_6,                     ___, ___,     ___,     KC_ALGR, ___,     ___,
-               ___,     KC_TRNS,  KC_TRNS, KC_TRNS,                                KC_TRNS, ___,     ___,     ___,
-                                                      ___,   ___,         ___, KC_TRNS,
-                                                           KC_TRNS,      ___,
-                                         KC_TRNS, KC_TRNS, KC_TRNS,      ___, KC_ENT, KC_SPC
+                                           KC_SPC, KC_LALT, KC_TAB,      ___, KC_ENT, KC_SPC
           ),
 
      // Full Dvorak layout
@@ -296,13 +286,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
      }
      return false;
 
-     case KC_DVF:
      /* Don't need this for now.
+     case KC_DVF:
      if (record->event.pressed) {
           set_single_persistent_default_layer(DVORAK_FULL);
      }
-     */
      return false;
+     */
 
      case KC_QW:
      if (record->event.pressed) {
@@ -310,13 +300,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
      }
      return false;
 
-     case KC_BASE:
      /* Don't need this for now.
+     case KC_BASE:
      if (record->event.pressed) {
           set_single_persistent_default_layer(BASE);
      }
-     */
      return false;
+     */
 
      case KC_TARK:
      if (record->event.pressed) {
