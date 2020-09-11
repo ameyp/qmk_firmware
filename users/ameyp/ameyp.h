@@ -77,7 +77,7 @@ enum userspace_layers {
 #define ________TARK_2________           KC_G,    KC_Q,    KC_W,    KC_E,     KC_T
 #define ________TARK_3________           KC_R,    KC_A,    KC_S,    KC_D,     KC_F
 #define ________TARK_4________           KC_O,    KC_B,    KC_X,    KC_C,     KC_Y
-#define   ______TARK_5______             KC_TAB,  LT(MEDR, KC_O),   KC_DEL,   KC_SPC
+#define   ______TARK_5______             LT(MEDR, KC_O), KC_TAB,    KC_SPC,   KC_DEL
 
 #define ________BLANK________            KC_NU,   KC_NU,   KC_NU,   KC_NU,    KC_NU
 #define   ______BLANK______              KC_NU,   KC_NU,   KC_NU,   KC_NU
