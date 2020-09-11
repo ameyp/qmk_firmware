@@ -138,14 +138,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      ________NUM_1________,                           ________BLANK________,
      ________NUM_2________,                           ________MODS_R1________,
      ________NUM_3________,                           ________BLANK________,
-       ______BLANK______,                               ______BLANK______
+       ______NUM_4______,                               ______BLANK______
 ),
 
      [NSSL] = LAYOUT_ameyp_wrapper(
      ________SYM_1________,                           ________BLANK________,
      ________SYM_2________,                           ________MODS_R1________,
      ________SYM_3________,                           ________BLANK________,
-       ______BLANK______,                               ______BLANK______
+       ______SYM_4______,                               ______BLANK______
 ),
 
      [TARK] = LAYOUT_ameyp_gaming_wrapper(

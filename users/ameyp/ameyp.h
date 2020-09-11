@@ -45,7 +45,7 @@ enum userspace_layers {
 #define ________NUM_1________            KC_DOT,  KC_7,    KC_8,    KC_9,     KC_EQL
 #define ________NUM_2________            KC_SCLN, KC_4,    KC_5,    KC_6,     KC_MINS
 #define ________NUM_3________            KC_GRV,  KC_1,    KC_2,    KC_3,     KC_BSLS
-#define   ______NUM_4______              KC_LBRC, KC_0,    KC_RBRC, KC_NU
+#define   ______NUM_4______              KC_NU,   KC_LBRC, KC_0,    KC_RBRC
 
 #define ________FUNC_1________           KC_F12,  KC_F7,   KC_F8,   KC_F9,    KC_PSCR
 #define ________FUNC_2________           KC_F11,  KC_F4,   KC_F5,   KC_F6,    KC_SLCK
@@ -54,7 +54,7 @@ enum userspace_layers {
 #define ________SYM_1________            KC_LCBR, KC_AMPR, KC_SLSH, KC_UNDS,  KC_PLUS
 #define ________SYM_2________            KC_COLN, KC_DLR,  KC_PERC, KC_AT,    KC_UNDS
 #define ________SYM_3________            KC_TILD, KC_EXLM, KC_ASTR, KC_HASH,  KC_PIPE
-#define   ______SYM_4______              KC_LCBR, KC_CIRC, KC_RCBR, KC_NU
+#define   ______SYM_4______              KC_NU,   KC_LCBR, KC_CIRC, KC_RCBR
 
 #define ________NAV_1________            KC_ESC,  KC_TAB,  KC_PGUP, KC_PGDN,  KC_AGIN
 #define ________NAV_2________            KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,  KC_COPY
