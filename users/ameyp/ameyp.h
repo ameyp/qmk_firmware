@@ -5,6 +5,7 @@
 #define KC_NP KC_NO // key is not present
 #define KC_NA KC_NO // present but not available for use
 #define KC_NU KC_NO // available but not used
+#define ___   KC_NO // don't care, unused or not available
 
 // non-KC_ keycodes
 #define KC_RST RESET
@@ -30,6 +31,14 @@ enum userspace_layers {
      NSSL,
      NSL,
      FUNL
+};
+
+enum layout_keycodes {
+     KC_DV = SAFE_RANGE,
+     KC_DVF,
+     KC_QW,
+     KC_BASE,
+     KC_TARK
 };
 
 // Inspired by drashna's wrappers.h

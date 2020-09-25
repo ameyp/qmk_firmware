@@ -1,13 +1,5 @@
 #include "ameyp.h"
 
-enum kinesis_keycodes {
-     KC_DV = SAFE_RANGE,
-     KC_DVF,
-     KC_QW,
-     KC_BASE,
-     KC_TARK
-};
-
 #define LAYOUT_reduced(\
      M00, K00, K01, K02, K03, K04,                        K05, K06, K07, K08, K09, M09, \
      M10, K10, K11, K12, K13, K14,                        K15, K16, K17, K18, K19, M19, \

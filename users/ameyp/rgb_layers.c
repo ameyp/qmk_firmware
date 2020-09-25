@@ -1,3 +1,4 @@
+#ifdef RGBLIGHT_LAYERS
 #include "rgb_layers.h"
 #include "ameyp.h"
 
@@ -31,3 +32,4 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     rgblight_set_layer_state(2, layer_state_cmp(state|default_layer_state, TARK));
     return state;
 }
+#endif
